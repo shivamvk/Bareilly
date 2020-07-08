@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pick_a_theme">एक थीम चुनें</string>
+    <string name="light_theme">प्रकाश थीम</string>
+    <string name="dark_theme">डार्क थीम</string>
+    <string name="btn_continue">जारी रखें</string>
+    <string name="login">लॉग इन करें</string>
+</resources>

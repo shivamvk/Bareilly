@@ -1,0 +1,52 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SelectLanguageActivityTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@color/colorPink</item>
+    </style>
+
+    <style name="SelectThemeActivityTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@color/colorPink</item>
+    </style>
+
+    <style name="LightTheme" parent="AppTheme">
+        <item name="primaryText">@color/lightPrimaryText</item>
+        <item name="primaryBackground">@color/lightPrimaryBg</item>
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorGreen">@android:color/holo_green_light</item>
+        <item name="mainBtnColor">@color/colorPurpule</item>
+        <item name="mainBtnTextColor">@android:color/white</item>
+        <item name="actionBarTextColor">@color/colorBlack</item>
+    </style>
+
+    <style name="DarkTheme" parent="AppTheme">
+        <item name="primaryText">@color/darkPrimaryText</item>
+        <item name="primaryBackground">@color/darkPrimaryBg</item>
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="colorGreen">@android:color/holo_green_light</item>
+        <item name="mainBtnColor">@color/colorPink</item>
+        <item name="mainBtnTextColor">@android:color/black</item>
+        <item name="actionBarTextColor">@color/colorWhite</item>
+    </style>
+
+    <style name="BottomSheetActivityDarkTheme" parent="DarkTheme">
+        <item name="colorPrimary">@color/colorPurpule</item>
+        <item name="colorPrimaryDark">@color/colorPurpule</item>
+        <item name="bottomSheetActivityColorBg">@color/colorPurpule</item>
+        <item name="bottomSheetActivityCardColorBg">@color/colorBlack</item>
+    </style>
+
+    <style name="BottomSheetActivityLightTheme" parent="LightTheme">
+        <item name="colorPrimary">@color/colorPink</item>
+        <item name="colorPrimaryDark">@color/colorPink</item>
+        <item name="bottomSheetActivityColorBg">@color/colorPink</item>
+        <item name="bottomSheetActivityCardColorBg">@color/colorWhite</item>
+    </style>
+
+</resources>

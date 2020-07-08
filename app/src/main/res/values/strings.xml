@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name" translatable="false">Bareilly</string>
+    <string name="please_select_your_language_en" translatable="false">Please select your language</string>
+    <string name="please_select_your_language_hi" translatable="false">कृपया अपनी भाषा चुनें</string>
+    <string name="pick_a_theme">Pick a theme</string>
+    <string name="light_theme">Light theme</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="btn_continue">Continue</string>
+    <string name="login">Login</string>
+</resources>

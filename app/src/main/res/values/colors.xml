@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPink">#ff917e</color>
+    <color name="colorPurpule">#451d50</color>
+    <!--    Light theme colors always start with light keyword-->
+    <color name="lightPrimaryText">#000000</color>
+    <color name="lightPrimaryBg">#ffffff</color>
+    <!--    Dark theme colors always start with dark keyword-->
+    <color name="darkPrimaryText">#ffffff</color>
+    <color name="darkPrimaryBg">#000000</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+</resources>

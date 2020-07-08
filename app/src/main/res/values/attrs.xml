@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="primaryText" format="color"/>
+    <attr name="primaryBackground" format="color"/>
+    <attr name="secondaryText" format="color"/>
+    <attr name="colorGreen" format="color" />
+    <attr name="bottomSheetActivityColorBg" format="color" />
+    <attr name="bottomSheetActivityCardColorBg" format="color" />
+    <attr name="mainBtnColor" format="color" />
+    <attr name="mainBtnTextColor" format="color" />
+    <attr name="actionBarTextColor" format="color" />
+</resources>
