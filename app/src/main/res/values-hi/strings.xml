@@ -16,4 +16,15 @@
     <string name="resend_otp">OTP पुनः भेजें</string>
     <string name="otp_sent_successfuly">OTP सफलतापूर्वक भेजा गया</string>
     <string name="enter_a_valid_otp">एक वैध OTP दर्ज करें</string>
+    <string name="edit_profile">प्रोफ़ाइल संपादित करें</string>
+    <string name="complete_profile">अपनी प्रोफाइल पूरी करें</string>
+    <string name="pick_a_photo">एक तस्वीर चुनें</string>
+    <string name="username">उपयोगकर्ता नाम</string>
+    <string name="full_name">पूरा नाम</string>
+    <string name="about_you">आपके बारे में</string>
+    <string name="gender">लिंग</string>
+    <string name="male">नर</string>
+    <string name="female">महिला</string>
+    <string name="other">अन्य</string>
+    <string name="prefer_not_to_say">मैं नहीं कहूंगा</string>
 </resources>

@@ -14,6 +14,16 @@ import androidx.appcompat.app.AppCompatDelegate
 import io.shivamvk.bareilly.databinding.ActivityLoginBinding
 import kotlinx.android.synthetic.main.activity_login.*
 
+/*
+    BottomSheetActivity type
+    User enters phone number,
+    sends an otp and verify's it
+    After verifying
+        if new user
+            send to Edit profile Activity with extra intent "type" as "Complete Profile"
+        else if old user
+            send to MainActivity
+ */
 class LoginActivity : AppCompatActivity(), TextWatcher, View.OnClickListener {
 
     lateinit var binding: ActivityLoginBinding
@@ -85,8 +95,8 @@ class LoginActivity : AppCompatActivity(), TextWatcher, View.OnClickListener {
             startActivity(
                 Intent(
                     this,
-                    CompleteProfileActivity::class.java
-                )
+                    EditProfileActivity::class.java
+                ).putExtra("type", "Complete profile")
             )
         }
     }
