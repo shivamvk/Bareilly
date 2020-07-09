@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".CompleteProfileActivity"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:windowSoftInputMode="stateVisible" />
         <activity
             android:name=".SelectThemeActivity"
             android:theme="@style/SelectThemeActivityTheme" />

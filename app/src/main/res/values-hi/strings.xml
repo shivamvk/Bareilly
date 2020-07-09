@@ -5,4 +5,15 @@
     <string name="dark_theme">डार्क थीम</string>
     <string name="btn_continue">जारी रखें</string>
     <string name="login">लॉग इन करें</string>
+    <string name="enter_your_number">अपना मोबाइल नंबर दर्ज करें</string>
+    <string name="we_will_send_an_otp_to_this_number_to_verify">हम सत्यापित करने के लिए इस नंबर पर एक otp भेजेंगे</string>
+    <string name="enter_a_valid_mobile_number">कृपया एक मान्य मोबाइल नंबर दर्ज करें</string>
+    <string name="send_otp">OTP भेजें</string>
+    <string name="verify_otp">OTP सत्यापित करें</string>
+    <string name="didn_t_receive_otp">OTP प्राप्त नहीं किया?</string>
+    <string name="resend_in">पुनः भेजें</string>
+    <string name="secs">सेकंड में</string>
+    <string name="resend_otp">OTP पुनः भेजें</string>
+    <string name="otp_sent_successfuly">OTP सफलतापूर्वक भेजा गया</string>
+    <string name="enter_a_valid_otp">एक वैध OTP दर्ज करें</string>
 </resources>

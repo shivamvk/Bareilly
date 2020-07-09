@@ -9,4 +9,5 @@
     <attr name="mainBtnColor" format="color" />
     <attr name="mainBtnTextColor" format="color" />
     <attr name="actionBarTextColor" format="color" />
+    <attr name="colorGrey" format="color" />
 </resources>
