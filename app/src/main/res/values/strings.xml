@@ -35,4 +35,5 @@
     <string name="home">Home</string>
     <string name="queries">Queries</string>
     <string name="profile">Profile</string>
+    <string name="skip">Skip</string>
 </resources>

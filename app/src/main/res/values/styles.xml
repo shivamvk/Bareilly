@@ -45,6 +45,10 @@
         <item name="bottomNavIconSelectedColor">@color/colorPink</item>
     </style>
 
+    <style name="OnBoardingActivityTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@color/colorPink</item>
+    </style>
+
     <style name="BottomSheetActivityDarkTheme" parent="DarkTheme">
         <item name="colorPrimary">@color/colorPurpule</item>
         <item name="colorPrimaryDark">@color/colorPurpule</item>
