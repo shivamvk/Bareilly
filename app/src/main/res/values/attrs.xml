@@ -10,4 +10,7 @@
     <attr name="mainBtnTextColor" format="color" />
     <attr name="actionBarTextColor" format="color" />
     <attr name="colorGrey" format="color" />
+    <attr name="bottomNavBgColor" format="color" />
+    <attr name="bottomNavTextColor" format="color" />
+    <attr name="bottomNavIconSelectedColor" format="color" />
 </resources>

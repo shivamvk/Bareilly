@@ -8,17 +8,11 @@
     tools:context=".MainActivity"
     android:background="?attr/primaryBackground">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/please_select_your_language_en"
-        android:textColor="?attr/primaryText"
-        android:layout_centerInParent="true"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bt_toggle"
-        android:text="Toggle"/>
+    <include
+        android:id="@+id/layout_bottom_view"
+        layout="@layout/activity_main_bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

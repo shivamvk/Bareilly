@@ -21,16 +21,31 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
-        startActivity(Intent(this, SelectLanguageActivity::class.java))
-        binding.btToggle.setOnClickListener {
-            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
+        setUpBottomNav()
+    }
 
-//            finish()
-//            startActivity(Intent(this, this.javaClass))
-        }
+    private fun loadHomeFragment() {
+        binding.layoutBottomView.ivHomeIcon.setImageResource(R.drawable.ic_home_selected)
+        binding.layoutBottomView.ivProfileIcon.setImageResource(R.drawable.ic_profile_unselected)
+        binding.layoutBottomView.ivQueriesIcon.setImageResource(R.drawable.ic_queries_unselected)
+    }
+
+    private fun loadQueriesFragment() {
+        binding.layoutBottomView.ivQueriesIcon.setImageResource(R.drawable.ic_queries_selected)
+        binding.layoutBottomView.ivHomeIcon.setImageResource(R.drawable.ic_home_unselected)
+        binding.layoutBottomView.ivProfileIcon.setImageResource(R.drawable.ic_profile_unselected)
+    }
+
+    private fun loadProfileFragment() {
+        binding.layoutBottomView.ivProfileIcon.setImageResource(R.drawable.ic_profile_selected)
+        binding.layoutBottomView.ivQueriesIcon.setImageResource(R.drawable.ic_queries_unselected)
+        binding.layoutBottomView.ivHomeIcon.setImageResource(R.drawable.ic_home_unselected)
+    }
+
+    private fun setUpBottomNav() {
+        loadHomeFragment()
+        binding.layoutBottomView.llHome.setOnClickListener{ loadHomeFragment() }
+        binding.layoutBottomView.llQueries.setOnClickListener{ loadQueriesFragment() }
+        binding.layoutBottomView.llProfile.setOnClickListener { loadProfileFragment() }
     }
 }

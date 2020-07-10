@@ -29,4 +29,10 @@
     <string name="female">Female</string>
     <string name="prefer_not_to_say">Prefer not to say</string>
     <string name="other">Others</string>
+    <string name="save">Save</string>
+    <string name="username_helper_text">Help people discover your account by choosing a username you\'re known by. You can change this later but it uniques to an account</string>
+    <string name="username_is_required_to_proceed">Username is required to proceed</string>
+    <string name="home">Home</string>
+    <string name="queries">Queries</string>
+    <string name="profile">Profile</string>
 </resources>

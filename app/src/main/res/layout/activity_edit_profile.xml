@@ -72,7 +72,7 @@
                     android:layout_marginTop="16dp"
                     android:hint="@string/username"
                     android:textColorHint="?attr/colorGrey"
-                    app:helperText="Help people discover your account by choosing a username you're known by. You can change this later but it uniques to an account"
+                    app:helperText="@string/username_helper_text"
                     app:helperTextEnabled="true"
                     app:helperTextTextColor="?attr/colorGrey">
 
@@ -142,13 +142,14 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
+                    android:id="@+id/bt_edit_profile_continue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/til_edit_profile_gender"
                     android:layout_marginTop="24dp"
                     android:layout_marginBottom="32dp"
                     android:background="@drawable/rounded_bg_theme_based"
-                    android:text="Save"
+                    android:text="@string/btn_continue"
                     android:textColor="?attr/bottomSheetActivityCardColorBg"
                     android:textAllCaps="false"/>
 

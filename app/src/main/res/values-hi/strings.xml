@@ -27,4 +27,10 @@
     <string name="female">महिला</string>
     <string name="other">अन्य</string>
     <string name="prefer_not_to_say">मैं नहीं कहूंगा</string>
+    <string name="username_helper_text">लोगों को अपना खाता खोजने में मदद करने के लिए एक उपयोगकर्ता नाम चुनें। आप इसे बाद में बदल सकते हैं लेकिन यह एक खाते के लिए अद्वितीय है</string>
+    <string name="save">Save</string>
+    <string name="username_is_required_to_proceed">आगे बढ़ने के लिए उपयोगकर्ता नाम आवश्यक है</string>
+    <string name="home">घर</string>
+    <string name="queries">सवाल</string>
+    <string name="profile">प्रोफ़ाइल</string>
 </resources>
