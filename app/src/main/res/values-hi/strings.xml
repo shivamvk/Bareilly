@@ -33,5 +33,11 @@
     <string name="home">घर</string>
     <string name="queries">सवाल</string>
     <string name="profile">प्रोफ़ाइल</string>
-    <string name="skip">Skip</string>
+    <string name="bareilly_against_corona">कोरोना के खिलाफ बरेली</string>
+    <string name="skip">छोड़ें</string>
+    <string name="total_cases">कुल मामले</string>
+    <string name="recovered">बरामद</string>
+    <string name="deaths">मौतें</string>
+    <string name="source_semicolon">"स्रोत: "</string>
+    <string name="wikipedia">विकिपीडिया</string>
 </resources>

@@ -8,6 +8,13 @@
     tools:context=".MainActivity"
     android:background="?attr/primaryBackground">
 
+    <io.shivamvk.bareilly.utils.CustomViewPager
+        android:id="@+id/main_activity_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_bottom_view"
+        android:layout_alignParentTop="true"/>
+
     <include
         android:id="@+id/layout_bottom_view"
         layout="@layout/activity_main_bottom_nav_view"

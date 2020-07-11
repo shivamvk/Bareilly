@@ -36,4 +36,10 @@
     <string name="queries">Queries</string>
     <string name="profile">Profile</string>
     <string name="skip">Skip</string>
+    <string name="bareilly_against_corona">Bareilly against corona</string>
+    <string name="total_cases">Total cases</string>
+    <string name="recovered">Recovered</string>
+    <string name="deaths">Deaths</string>
+    <string name="source_semicolon">"Source: "</string>
+    <string name="wikipedia">Wikipedia</string>
 </resources>

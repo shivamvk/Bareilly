@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_card_border">
+
+            <LinearLayout
+                android:id="@+id/anim_and_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_alignParentTop="true">
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/home_stay_safe_anim"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="2"
+                    android:layout_alignParentTop="true"
+                    app:lottie_loop="true" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bareilly_against_corona"
+                    android:textColor="?attr/primaryText"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/stats_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/anim_and_title_layout"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_cases"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:textColor="?attr/colorGrey"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="259"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="?attr/mainBtnColor"
+                        android:fontFamily="@font/poppins"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/recovered"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:textColor="?attr/colorGrey"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="157"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="?attr/mainBtnColor"
+                        android:fontFamily="@font/poppins"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/deaths"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:textColor="?attr/colorGrey"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="?attr/mainBtnColor"
+                        android:fontFamily="@font/poppins"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/stats_layout"
+                android:layout_marginRight="6dp"
+                android:layout_marginEnd="6dp"
+                android:gravity="right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/source_semicolon"
+                    android:textColor="?attr/colorGrey"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/stats_layout"
+                    android:text="@string/wikipedia"
+                    android:textColor="?attr/colorGrey"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_light"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

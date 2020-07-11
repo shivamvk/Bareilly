@@ -17,8 +17,8 @@ class OnBoardingActivity : AppCompatActivity() {
     lateinit var binding: ActivityOnBoardingBinding
     private var timer: Timer? = null
     private var currentPosition = 0
-    var onBoardingAdapter: OnBoardingAdapter? = null
-    var lottieAnimationView: LottieAnimationView? = null
+    private var onBoardingAdapter: OnBoardingAdapter? = null
+    private var lottieAnimationView: LottieAnimationView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,7 +67,7 @@ class OnBoardingActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {}
             override fun onPageScrollStateChanged(state: Int) {}
         })
-        createSlidShow()
+        createSlideShow()
     }
 
     private fun callAnimation(position: Int) {
@@ -80,15 +80,12 @@ class OnBoardingActivity : AppCompatActivity() {
         lottieAnimationView?.playAnimation()
     }
 
-    fun createSlidShow()
-    {
+    private fun createSlideShow() {
         var handler= Handler()
-        var runnable= object : Runnable {
-            override fun run() {
-                if(currentPosition==4)
-                    currentPosition=0
-                binding.viewPager?.setCurrentItem(currentPosition++,true)
-            }
+        var runnable = Runnable {
+            if(currentPosition==4)
+                currentPosition=0
+            binding.viewPager?.setCurrentItem(currentPosition++,true)
         }
         timer= Timer()
         timer?.schedule(object : TimerTask() {
