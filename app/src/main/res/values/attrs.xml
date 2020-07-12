@@ -13,4 +13,6 @@
     <attr name="bottomNavBgColor" format="color" />
     <attr name="bottomNavTextColor" format="color" />
     <attr name="bottomNavIconSelectedColor" format="color" />
+    <attr name="likeIconChecked" format="color" />
+    <attr name="likeIconUnchecked" format="color" />
 </resources>

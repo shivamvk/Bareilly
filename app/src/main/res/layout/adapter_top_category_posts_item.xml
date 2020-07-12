@@ -64,13 +64,98 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/post_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_picture"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/dummy_text"
+        android:textColor="?attr/primaryText"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins" />
+
     <ImageView
         android:id="@+id/post_image"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_below="@id/profile_picture"
+        android:layout_below="@id/post_text"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/dummy_post"
         android:scaleType="centerCrop"
         android:layout_marginTop="12dp"/>
+
+<!--    <com.airbnb.lottie.LottieAnimationView-->
+<!--        android:id="@+id/post_image_like_anim"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:lottie_rawRes="@raw/like_on_post"-->
+<!--        android:layout_below="@id/post_text"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        app:lottie_autoPlay="false"-->
+<!--        app:lottie_loop="false"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_below="@id/post_image">
+
+        <CheckBox
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:button="@null"
+            android:checked="false"
+            android:background="@drawable/ic_like_icon_posts"
+            android:stateListAnimator="@animator/like_icon_anim"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="142"
+            android:textSize="16sp"
+            android:textColor="?attr/colorGrey"
+            android:fontFamily="@font/poppins_light"/>
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/ic_comments_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="10"
+            android:textSize="16sp"
+            android:textColor="?attr/colorGrey"
+            android:fontFamily="@font/poppins_light"/>
+
+        <CheckBox
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="8dp"
+            android:button="@null"
+            android:checked="false"
+            android:background="@drawable/ic_unlike_icon_posts"
+            android:stateListAnimator="@animator/like_icon_anim"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:text="5"
+            android:textSize="16sp"
+            android:textColor="?attr/colorGrey"
+            android:fontFamily="@font/poppins_light"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
