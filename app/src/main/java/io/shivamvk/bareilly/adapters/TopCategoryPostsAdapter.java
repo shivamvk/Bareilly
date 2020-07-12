@@ -46,6 +46,7 @@ public class TopCategoryPostsAdapter extends RecyclerView.Adapter<TopCategoryPos
         if (position%2==0){
             holder.postImageView.setVisibility(View.GONE);
         }
+        holder.postText.setText(context.getResources().getString(R.string.dummy_text));
     }
 
     @Override

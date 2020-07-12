@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_cororna_stats"
@@ -178,6 +177,7 @@
             android:id="@+id/top_news_heading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/card_cororna_stats"
             android:gravity="left"
             android:text="@string/top_news_today"
             android:textSize="16sp"
@@ -189,8 +189,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/news_list_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_news_heading"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.core.widget.NestedScrollView>
