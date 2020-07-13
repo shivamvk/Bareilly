@@ -1,6 +1,8 @@
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="progressDialogBgColor">#f5f5f5</item>
+        <item name="progressDialogTextColor">#a9a9a9</item>
     </style>
 
     <style name="SelectLanguageActivityTheme" parent="AppTheme">
@@ -28,6 +30,11 @@
         <item name="bottomNavIconSelectedColor">@color/colorPurpule</item>
         <item name="likeIconChecked">@color/colorPink</item>
         <item name="likeIconUnchecked">#a9a9a9</item>
+        <item name="progressDialogBgColor">#f5f5f5</item>
+        <item name="progressDialogTextColor">#a9a9a9</item>
+        <item name="fabSubmenuBg">#f5f5f5</item>
+
+
     </style>
 
     <style name="DarkTheme" parent="AppTheme">
@@ -47,6 +54,9 @@
         <item name="bottomNavIconSelectedColor">@color/colorPink</item>
         <item name="likeIconChecked">@color/colorPink</item>
         <item name="likeIconUnchecked">#f5f5f5</item>
+        <item name="progressDialogBgColor">#303030</item>
+        <item name="progressDialogTextColor">@color/colorWhite</item>
+        <item name="fabSubmenuBg">#303030</item>
     </style>
 
     <style name="OnBoardingActivityTheme" parent="AppTheme">

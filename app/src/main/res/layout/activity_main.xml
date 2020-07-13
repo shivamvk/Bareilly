@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     android:background="?attr/primaryBackground">
 
@@ -15,16 +15,28 @@
         android:layout_alignParentTop="true"/>
 
     <include
+        android:id="@+id/main_fab_sub_menu"
         layout="@layout/main_fab_sub_menu" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/main_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="70dp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="12dp"
+        android:layout_marginRight="16dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/ic_edit_icon"/>
+        android:backgroundTint="?attr/colorAccent"
+        android:contentDescription="@string/create_post"
+        android:text="@string/create_post"
+        android:textColor="#f5f5f5"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins"
+        app:icon="@drawable/ic_edit_icon"
+        app:iconSize="20dp"
+        app:iconPadding="8dp"/>
 
     <include
         android:id="@+id/layout_bottom_view"

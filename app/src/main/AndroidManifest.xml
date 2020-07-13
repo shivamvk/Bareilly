@@ -10,9 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CreatePostActivity"></activity>
         <activity
             android:name=".OnBoardingActivity"
-            android:theme="@style/OnBoardingActivityTheme"/>
+            android:theme="@style/OnBoardingActivityTheme" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

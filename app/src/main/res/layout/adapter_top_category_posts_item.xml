@@ -64,7 +64,7 @@
 
     </LinearLayout>
 
-    <TextView
+    <com.hendraanggrian.widget.SocialTextView
         android:id="@+id/post_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

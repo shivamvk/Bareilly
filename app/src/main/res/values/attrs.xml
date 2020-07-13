@@ -15,4 +15,7 @@
     <attr name="bottomNavIconSelectedColor" format="color" />
     <attr name="likeIconChecked" format="color" />
     <attr name="likeIconUnchecked" format="color" />
+    <attr name="progressDialogBgColor" format="color" />
+    <attr name="progressDialogTextColor" format="color" />
+    <attr name="fabSubmenuBg" format="color" />
 </resources>

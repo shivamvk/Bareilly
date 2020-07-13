@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@+id/fab_submenu"
+<FrameLayout android:id="@+id/main_fab_sub_menu_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="?attr/actionBarSize"
     android:paddingVertical="55dp"
-    android:paddingHorizontal="16dp"
+    android:paddingHorizontal="12dp"
     android:orientation="vertical"
     tools:context=".MainActivity"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,6 +12,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:id="@+id/news_report_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -24,7 +25,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="?attr/primaryBackground"
+                app:cardBackgroundColor="?attr/fabSubmenuBg"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="10dp"
                 app:cardUseCompatPadding="true" >
@@ -43,8 +44,9 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
             android:src="@drawable/ic_post_clock"
-            app:backgroundTint="?attr/primaryBackground"
+            app:backgroundTint="?attr/fabSubmenuBg"
             app:fabSize="mini" />
 
     </LinearLayout>
@@ -62,7 +64,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="?attr/primaryBackground"
+            app:cardBackgroundColor="?attr/fabSubmenuBg"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp"
             app:cardUseCompatPadding="true" >
@@ -80,8 +82,9 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
             android:src="@drawable/ic_post_clock"
-            app:backgroundTint="?attr/primaryBackground"
+            app:backgroundTint="?attr/fabSubmenuBg"
             app:fabSize="mini" />
 
     </LinearLayout>
@@ -99,7 +102,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="?attr/primaryBackground"
+            app:cardBackgroundColor="?attr/fabSubmenuBg"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp"
             app:cardUseCompatPadding="true" >
@@ -117,8 +120,9 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
             android:src="@drawable/ic_post_clock"
-            app:backgroundTint="?attr/primaryBackground"
+            app:backgroundTint="?attr/fabSubmenuBg"
             app:fabSize="mini" />
 
     </LinearLayout>
@@ -136,7 +140,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="?attr/primaryBackground"
+            app:cardBackgroundColor="?attr/fabSubmenuBg"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp"
             app:cardUseCompatPadding="true" >
@@ -154,8 +158,9 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
             android:src="@drawable/ic_post_clock"
-            app:backgroundTint="?attr/primaryBackground"
+            app:backgroundTint="?attr/fabSubmenuBg"
             app:fabSize="mini" />
 
     </LinearLayout>

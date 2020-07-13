@@ -2,16 +2,18 @@ package io.shivamvk.bareilly
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import io.shivamvk.bareilly.adapters.MainActivityViewPagerAdapter
 import io.shivamvk.bareilly.databinding.ActivityMainBinding
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var binding: ActivityMainBinding
     lateinit var viewPagerAdapter: MainActivityViewPagerAdapter
+    private var showingFabSubMenu = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +53,26 @@ class MainActivity : AppCompatActivity() {
         binding.mainActivityViewPager.adapter = viewPagerAdapter
     }
 
+    private fun hideFabSubmenu(){
+        showingFabSubMenu = false
+        binding.mainFabSubMenu.mainFabSubMenuLayout.visibility = View.GONE
+        binding.mainFab.text = resources.getString(R.string.create_post)
+        binding.mainFab.icon = resources.getDrawable(R.drawable.ic_edit_icon)
+    }
+
+    private fun showFabSubmenu(){
+        showingFabSubMenu = true
+        binding.mainFabSubMenu.mainFabSubMenuLayout.visibility = View.VISIBLE
+        binding.mainFab.text = resources.getString(R.string.select_type)
+        binding.mainFab.icon = resources.getDrawable(R.drawable.ic_close_icon)
+    }
+
+    private fun setUpFAB(){
+        hideFabSubmenu()
+        binding.mainFab.setOnClickListener(this)
+        binding.mainFabSubMenu.newsReportLayout.setOnClickListener(this)
+    }
+
     private fun init() {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.DarkTheme);
@@ -62,5 +84,20 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setUpViewPager()
         setUpBottomNav()
+        setUpFAB()
+    }
+
+    override fun onClick(v: View?) {
+        when(v?.id){
+            R.id.main_fab -> {
+                if (showingFabSubMenu) hideFabSubmenu()
+                else showFabSubmenu()
+            }
+            R.id.news_report_layout -> {
+                startActivity(Intent(
+                    this, CreatePostActivity::class.java
+                ).putExtra("type","News Report"))
+            }
+        }
     }
 }
