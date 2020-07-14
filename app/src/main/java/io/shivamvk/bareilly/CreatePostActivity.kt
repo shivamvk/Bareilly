@@ -1,10 +1,12 @@
 package io.shivamvk.bareilly
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.dhaval2404.imagepicker.ImagePicker
@@ -13,6 +15,7 @@ import com.hendraanggrian.socialview.commons.HashtagAdapter
 import com.hendraanggrian.socialview.commons.Mention
 import com.hendraanggrian.socialview.commons.MentionAdapter
 import com.hendraanggrian.widget.SocialAutoCompleteTextView
+import io.shivamvk.bareilly.adapters.CreatePostMentionAdapter
 import io.shivamvk.bareilly.adapters.TrendingTagsAdapter
 import io.shivamvk.bareilly.databinding.ActivityCreatePostBinding
 import io.shivamvk.bareilly.utils.CustomeProgressDialog
@@ -59,6 +62,43 @@ class CreatePostActivity : AppCompatActivity(), View.OnClickListener {
         binding.closeSelectedImage.visibility = View.GONE
     }
 
+    private fun setUpEditTextForPostContent(){
+        var postSocialEditText = SocialAutoCompleteTextView<Hashtag, Mention>(baseContext)
+        postSocialEditText = findViewById(R.id.post_content_view)
+        setHashtags(postSocialEditText)
+        setMentions(postSocialEditText)
+        postSocialEditText.requestFocus()
+        val imm =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(postSocialEditText, 0)
+    }
+
+    private fun setHashtags(textView: SocialAutoCompleteTextView<Hashtag, Mention>) {
+        textView.hashtagAdapter = HashtagAdapter(baseContext)
+        //get all tags from the server later and add them to adapter
+        //adding dummy tags for now
+        var h1 = Hashtag("corona")
+        h1.count = 19
+        var h2 = Hashtag("jhumka")
+        h2.count = 67
+        textView.hashtagAdapter.add(h1)
+        textView.hashtagAdapter.add(h2)
+    }
+
+    private fun setMentions(postSocialEditText: SocialAutoCompleteTextView<Hashtag, Mention>) {
+        postSocialEditText.mentionAdapter = CreatePostMentionAdapter(baseContext)
+        //get all mentions from the server later and add them to adapter
+        //adding dummy mentions for now
+        var m1 = Mention("shivamvk")
+        m1.displayname = "Shivam Bhasin"
+        m1.setAvatarDrawable(R.drawable.profile_pic_placeholder)
+        var m2 = Mention("ashgarg143")
+        m2.displayname = "Ashish Garg"
+        m2.setAvatarDrawable(R.drawable.profile_pic_placeholder)
+        postSocialEditText.mentionAdapter.add(m1)
+        postSocialEditText.mentionAdapter.add(m2)
+    }
+
     private fun init(){
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.BottomSheetActivityDarkTheme);
@@ -68,23 +108,13 @@ class CreatePostActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityCreatePostBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
-        setUpTrendingTags()
         binding.closeActivity.setOnClickListener(this)
         binding.btnPost.setOnClickListener(this)
         binding.imageOptionCamera.setOnClickListener(this)
         binding.imageOptionGallery.setOnClickListener(this)
         binding.closeSelectedImage.setOnClickListener(this)
-        var textView = SocialAutoCompleteTextView<Hashtag, Mention>(baseContext)
-        textView = findViewById(R.id.post_content_view)
-        textView.setHashtagAdapter(HashtagAdapter(baseContext)) // or use custom adapter
-        textView.setMentionAdapter(MentionAdapter(baseContext))// or use custom adapter
-
-        textView.getHashtagAdapter().add(Hashtag("follow"))
-        textView.getHashtagAdapter().add(Hashtag("followme"))
-        textView.getHashtagAdapter().add(Hashtag("followmeorillkillyou"))
-        textView.getMentionAdapter().add(Mention("dirtyhobo"))
-        textView.getMentionAdapter().add(Mention("Regular Hobo"))
-        textView.getMentionAdapter().add(Mention("hendraanggrian"))
+        setUpTrendingTags()
+        setUpEditTextForPostContent()
     }
 
     override fun onClick(v: View?) {

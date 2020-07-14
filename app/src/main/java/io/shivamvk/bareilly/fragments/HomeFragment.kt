@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import io.shivamvk.bareilly.R
 import io.shivamvk.bareilly.adapters.TopCategoryPostsAdapter
 import io.shivamvk.bareilly.databinding.FragmentHomeBinding
+import io.shivamvk.bareilly.utils.CustomViewPager
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -70,14 +71,7 @@ class HomeFragment: Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.settings_icon_view -> {
-                var fragmentManager = fragmentManager
-                var fragmentTransaction = fragmentManager?.beginTransaction()
-                var settingsFragemnt = SettingsFragment.newInstance()
-                fragmentTransaction?.addToBackStack("homeFragment")
-                fragmentTransaction?.remove(this@HomeFragment)
-                fragmentTransaction?.add(settingsFragemnt, "settingsFragmentTag")
-                fragmentTransaction?.addToBackStack(null)
-                fragmentTransaction?.commit()
+
             }
         }
     }
