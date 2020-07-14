@@ -15,9 +15,10 @@ import org.jetbrains.annotations.NotNull;
 import io.shivamvk.bareilly.fragments.HomeFragment;
 import io.shivamvk.bareilly.fragments.ProfileFragment;
 import io.shivamvk.bareilly.fragments.QueriesFragment;
+import io.shivamvk.bareilly.fragments.SettingsFragment;
 
 public class MainActivityViewPagerAdapter extends FragmentStatePagerAdapter {
-    private int NUM_ITEMS = 3;
+    private int NUM_ITEMS = 4;
     private SparseArray<Fragment> mPageReferences;
 
     public MainActivityViewPagerAdapter(FragmentManager fragmentManager) {
@@ -45,6 +46,10 @@ public class MainActivityViewPagerAdapter extends FragmentStatePagerAdapter {
                 return fragment;
             case 2:
                 fragment = ProfileFragment.Companion.newInstance();
+                mPageReferences.put(position, fragment);
+                return fragment;
+            case 3:
+                fragment = SettingsFragment.Companion.newInstance();
                 mPageReferences.put(position, fragment);
                 return fragment;
             default:

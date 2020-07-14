@@ -2,6 +2,7 @@ package io.shivamvk.bareilly
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
@@ -13,6 +14,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import io.shivamvk.bareilly.databinding.ActivityLoginBinding
 import kotlinx.android.synthetic.main.activity_login.*
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper
+import io.shivamvk.bareilly.sharedPrefs.SharedPrefKeys
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper.set
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper.get
 
 /*
     BottomSheetActivity type
@@ -27,9 +32,18 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : AppCompatActivity(), TextWatcher, View.OnClickListener {
 
     lateinit var binding: ActivityLoginBinding
+    lateinit var prefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        prefs = PreferencesHelper.appPrefs(this)
+        if (prefs[SharedPrefKeys.USER_NAME.toString(), ""] != ""){
+            finish()
+            startActivity(
+                Intent(
+                this, MainActivity::class.java
+            ))
+        }
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.BottomSheetActivityDarkTheme);
         } else {

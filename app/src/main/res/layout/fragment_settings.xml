@@ -1,13 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_dark">
+    android:background="?attr/primaryBackground">
 
     <TextView
+        android:id="@+id/settings_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        android:layout_centerInParent="true"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginVertical="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/settings"
+        android:textSize="22sp"
+        android:textColor="?attr/primaryText"
+        android:fontFamily="@font/poppins"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_text"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/preferences"
+            android:textSize="14sp"
+            android:textColor="?attr/primaryText"
+            android:fontFamily="@font/poppins_bold" />
+
+        <TextView
+            android:id="@+id/current_theme_pref"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/current_theme"
+            android:textColor="?attr/primaryText"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:id="@+id/change_theme_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/change"
+            android:textColor="?attr/colorGrey"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:id="@+id/current_language_pref"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/current_language"
+            android:textColor="?attr/primaryText"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:id="@+id/change_language_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/change"
+            android:textColor="?attr/colorGrey"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/about"
+            android:textSize="14sp"
+            android:textColor="?attr/primaryText"
+            android:fontFamily="@font/poppins_bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/version"
+            android:textColor="?attr/primaryText"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="1.0.0"
+            android:textColor="?attr/colorGrey"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/open_source_software"
+            android:textColor="?attr/primaryText"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/sweet_software_that_helped_us"
+            android:textColor="?attr/colorGrey"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Terms and Conditions"
+            android:textColor="?attr/primaryText"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="All the stuff you need to know"
+            android:textColor="?attr/colorGrey"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Privacy Policy"
+            android:textColor="?attr/primaryText"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="Important for both of us"
+            android:textColor="?attr/colorGrey"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:text="Logout"
+            android:textColor="?attr/primaryText"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins" />
+
+        <com.hendraanggrian.widget.SocialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="You are logged in as @shivamvk"
+            android:textColor="?attr/colorGrey"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins" />
+
+    </LinearLayout>
 
 </RelativeLayout>

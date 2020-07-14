@@ -1,17 +1,15 @@
 package io.shivamvk.bareilly.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import io.shivamvk.bareilly.MainActivity
 import io.shivamvk.bareilly.R
 import io.shivamvk.bareilly.adapters.TopCategoryPostsAdapter
 import io.shivamvk.bareilly.databinding.FragmentHomeBinding
-import io.shivamvk.bareilly.utils.CustomViewPager
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -71,7 +69,7 @@ class HomeFragment: Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id){
             R.id.settings_icon_view -> {
-
+                (activity as MainActivity?)?.loadSettingsFragment()
             }
         }
     }

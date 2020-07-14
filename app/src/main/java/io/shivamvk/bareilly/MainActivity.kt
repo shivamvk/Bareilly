@@ -20,29 +20,34 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         init()
     }
 
-    private fun loadHomeFragment() {
+    public fun loadHomeFragment() {
         binding.mainActivityViewPager.currentItem = 0
         binding.layoutBottomView.ivHomeIcon.setImageResource(R.drawable.ic_home_selected)
         binding.layoutBottomView.ivProfileIcon.setImageResource(R.drawable.ic_profile_unselected)
         binding.layoutBottomView.ivQueriesIcon.setImageResource(R.drawable.ic_queries_unselected)
     }
 
-    private fun loadQueriesFragment() {
+    public fun loadQueriesFragment() {
         binding.mainActivityViewPager.currentItem = 1
         binding.layoutBottomView.ivQueriesIcon.setImageResource(R.drawable.ic_queries_selected)
         binding.layoutBottomView.ivHomeIcon.setImageResource(R.drawable.ic_home_unselected)
         binding.layoutBottomView.ivProfileIcon.setImageResource(R.drawable.ic_profile_unselected)
     }
 
-    private fun loadProfileFragment() {
+    public fun loadProfileFragment() {
         binding.mainActivityViewPager.currentItem = 2
         binding.layoutBottomView.ivProfileIcon.setImageResource(R.drawable.ic_profile_selected)
         binding.layoutBottomView.ivQueriesIcon.setImageResource(R.drawable.ic_queries_unselected)
         binding.layoutBottomView.ivHomeIcon.setImageResource(R.drawable.ic_home_unselected)
     }
 
+    public fun loadSettingsFragment() {
+        binding.mainActivityViewPager.currentItem = 3
+    }
+
     private fun setUpBottomNav() {
-        loadHomeFragment()
+        var loadFragment = intent.getIntExtra("openFragment", 0)
+        binding.mainActivityViewPager.currentItem = loadFragment
         binding.layoutBottomView.llHome.setOnClickListener{ loadHomeFragment() }
         binding.layoutBottomView.llQueries.setOnClickListener{ loadQueriesFragment() }
         binding.layoutBottomView.llProfile.setOnClickListener { loadProfileFragment() }

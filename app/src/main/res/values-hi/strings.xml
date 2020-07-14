@@ -51,4 +51,17 @@
     <string name="good_afternoon">नमस्कार</string>
     <string name="good_evening">सुसंध्या</string>
     <string name="good_night">शुभ रात्रि</string>
+    <string name="current_language">वर्तमान भाषा :</string>
+    <string name="current_theme">वर्तमान विषय :</string>
+    <string name="change">बदले</string>
+    <string name="settings">समायोजन</string>
+    <string name="preferences">ऐप प्राथमिकताएं</string>
+    <string name="light">प्रकाश</string>
+    <string name="hindi">हिन्दी</string>
+    <string name="english">English</string>
+    <string name="dark">डार्क</string>
+    <string name="about">about</string>
+    <string name="version">Version</string>
+    <string name="open_source_software">Open source software</string>
+    <string name="sweet_software_that_helped_us">Sweet software that helped us</string>
 </resources>

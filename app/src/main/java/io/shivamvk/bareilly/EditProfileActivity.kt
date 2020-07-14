@@ -2,6 +2,7 @@ package io.shivamvk.bareilly
 
 import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -9,10 +10,12 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import android.widget.Toast
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper.set
 import androidx.appcompat.app.AppCompatDelegate
 import com.github.dhaval2404.imagepicker.ImagePicker
 import io.shivamvk.bareilly.databinding.ActivityEditProfileBinding
+import io.shivamvk.bareilly.sharedPrefs.SharedPrefKeys
 import kotlinx.android.synthetic.main.activity_edit_profile.*
 import org.json.JSONObject
 import java.lang.IllegalArgumentException
@@ -22,6 +25,7 @@ class EditProfileActivity : AppCompatActivity(), TextWatcher {
     private val TAG = "EditProfileActivity"
     private val PROFILE_PICTURE_PICKER_CODE = 195
     lateinit var binding: ActivityEditProfileBinding
+    lateinit var prefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +37,7 @@ class EditProfileActivity : AppCompatActivity(), TextWatcher {
         binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        prefs = PreferencesHelper.appPrefs(this)
         init()
     }
 
@@ -44,6 +49,7 @@ class EditProfileActivity : AppCompatActivity(), TextWatcher {
             jsonObject.put("bio", til_edit_profile_bio.editText?.text.toString())
             jsonObject.put("gender", til_edit_profile_gender.editText?.text.toString())
             Log.i(TAG, jsonObject.toString())
+            prefs[SharedPrefKeys.USER_NAME.toString()] = til_edit_profile_username.editText?.text.toString()
             startActivity(
                 Intent(
                     this, MainActivity::class.java

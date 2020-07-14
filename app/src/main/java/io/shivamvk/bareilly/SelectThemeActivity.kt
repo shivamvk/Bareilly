@@ -1,5 +1,6 @@
 package io.shivamvk.bareilly
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.res.ResourcesCompat
 import io.shivamvk.bareilly.databinding.ActivitySelectThemeBinding
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper
+import io.shivamvk.bareilly.sharedPrefs.SharedPrefKeys
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper.set
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper.get
 
 class SelectThemeActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -45,14 +50,34 @@ class SelectThemeActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.bt_theme_selection_continue -> {
                 if (optionSelected){
-                    if (darkThemeSelected){
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    val prefs = PreferencesHelper.appPrefs(baseContext)
+                    if (prefs[SharedPrefKeys.APP_THEME.toString(), ""] == ""){
+                        if (darkThemeSelected) {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                            prefs[SharedPrefKeys.APP_THEME.toString()] =
+                                resources.getString(R.string.dark)
+                        } else {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                            prefs[SharedPrefKeys.APP_THEME.toString()] =
+                                resources.getString(R.string.light)
+                        }
+                        finish()
+                        startActivity(Intent(
+                            this, LoginActivity::class.java
+                        ))
                     } else {
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                        if (darkThemeSelected) {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                            prefs[SharedPrefKeys.APP_THEME.toString()] =
+                                resources.getString(R.string.dark)
+                        } else {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                            prefs[SharedPrefKeys.APP_THEME.toString()] =
+                                resources.getString(R.string.light)
+                        }
+                        setResult(Activity.RESULT_OK)
+                        finish()
                     }
-                    startActivity(
-                        Intent(this, LoginActivity::class.java)
-                    )
                 } else {
                     Toast.makeText(applicationContext, resources.getString(R.string.pick_a_theme), Toast.LENGTH_SHORT).show()
                 }

@@ -1,34 +1,31 @@
 package io.shivamvk.bareilly
 
+import android.app.Activity
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.res.Configuration
-import android.graphics.Typeface
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings.System.getConfiguration
 import android.util.DisplayMetrics
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.res.ResourcesCompat
-import io.shivamvk.bareilly.R
 import io.shivamvk.bareilly.databinding.ActivitySelectLanguageBinding
-import io.shivamvk.bareilly.sharedPrefs.SharedPrefs
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper
+import io.shivamvk.bareilly.sharedPrefs.SharedPrefKeys
 import java.util.*
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper.set
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper.get
 
 class SelectLanguageActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var binding: ActivitySelectLanguageBinding
     lateinit var selectedLocale: String
-    lateinit var prefs: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySelectLanguageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
-        prefs = SharedPrefs.defaultPrefs(this)
         selectedLocale = ""
         binding.tvLanguageOptionEn.setOnClickListener(this)
         binding.tvLanguageOptionHi.setOnClickListener(this)
@@ -66,7 +63,30 @@ class SelectLanguageActivity : AppCompatActivity(), View.OnClickListener {
                     val conf: Configuration = resources.configuration
                     conf.locale = Locale(selectedLocale)
                     resources.updateConfiguration(conf, dm)
-                    startActivity(Intent(this, SelectThemeActivity::class.java))
+                    val prefs = PreferencesHelper.appPrefs(this)
+                    if (prefs[SharedPrefKeys.APP_LOCALE.toString(), ""] == ""){
+                        if (selectedLocale == "en") {
+                            prefs[SharedPrefKeys.APP_LOCALE.toString()] =
+                                resources.getString(R.string.english)
+                        } else {
+                            prefs[SharedPrefKeys.APP_LOCALE.toString()] =
+                                resources.getString(R.string.hindi)
+                        }
+                        finish()
+                        startActivity(Intent(
+                            this, SelectThemeActivity::class.java
+                        ))
+                    } else {
+                        if (selectedLocale == "en") {
+                            prefs[SharedPrefKeys.APP_LOCALE.toString()] =
+                                resources.getString(R.string.english)
+                        } else {
+                            prefs[SharedPrefKeys.APP_LOCALE.toString()] =
+                                resources.getString(R.string.hindi)
+                        }
+                        setResult(Activity.RESULT_OK)
+                        finish()
+                    }
                 }
             }
         }

@@ -1,15 +1,17 @@
 package io.shivamvk.bareilly
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.widget.ImageView
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewpager.widget.ViewPager
 import com.airbnb.lottie.LottieAnimationView
 import io.shivamvk.bareilly.adapters.OnBoardingAdapter
 import io.shivamvk.bareilly.databinding.ActivityOnBoardingBinding
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper
+import io.shivamvk.bareilly.sharedPrefs.PreferencesHelper.set
+import io.shivamvk.bareilly.sharedPrefs.SharedPrefKeys
 import java.util.*
 
 class OnBoardingActivity : AppCompatActivity() {
@@ -19,6 +21,7 @@ class OnBoardingActivity : AppCompatActivity() {
     private var currentPosition = 0
     private var onBoardingAdapter: OnBoardingAdapter? = null
     private var lottieAnimationView: LottieAnimationView? = null
+    lateinit var prefs: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +33,10 @@ class OnBoardingActivity : AppCompatActivity() {
     private fun init() {
         setOnBoardAdapter()
         supportActionBar?.hide()
+        prefs = PreferencesHelper.appPrefs(this)
         binding.btnContinue.setOnClickListener {
+            prefs[SharedPrefKeys.ON_BOARDING_DONE.toString()] = true
+            finish()
             startActivity(
                 Intent(this, SelectLanguageActivity::class.java)
             )
