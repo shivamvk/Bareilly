@@ -1,5 +1,6 @@
 package io.shivamvk.bareilly.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,7 @@ import io.shivamvk.bareilly.databinding.FragmentHomeBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class HomeFragment: Fragment() {
+class HomeFragment: Fragment(), View.OnClickListener {
 
     lateinit var binding: FragmentHomeBinding
 
@@ -61,7 +62,23 @@ class HomeFragment: Fragment() {
         binding.homeStaySafeAnim.setAnimation(R.raw.stay_home_stay_safe)
         binding.homeStaySafeAnim.playAnimation()
         binding.newsListView.layoutManager = LinearLayoutManager(context)
+        binding.settingsIconView.setOnClickListener(this)
         setUpGreetingText()
         getTopNews()
+    }
+
+    override fun onClick(v: View?) {
+        when(v?.id){
+            R.id.settings_icon_view -> {
+                var fragmentManager = fragmentManager
+                var fragmentTransaction = fragmentManager?.beginTransaction()
+                var settingsFragemnt = SettingsFragment.newInstance()
+                fragmentTransaction?.addToBackStack("homeFragment")
+                fragmentTransaction?.remove(this@HomeFragment)
+                fragmentTransaction?.add(settingsFragemnt, "settingsFragmentTag")
+                fragmentTransaction?.addToBackStack(null)
+                fragmentTransaction?.commit()
+            }
+        }
     }
 }

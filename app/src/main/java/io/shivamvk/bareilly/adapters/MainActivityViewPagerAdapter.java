@@ -25,13 +25,11 @@ public class MainActivityViewPagerAdapter extends FragmentStatePagerAdapter {
         mPageReferences = new SparseArray<>();
     }
 
-    // Returns total number of pages
     @Override
     public int getCount() {
         return NUM_ITEMS;
     }
 
-    // Returns the fragment to display for that page
     @NotNull
     @Override
     public Fragment getItem(int position) {
@@ -75,7 +73,6 @@ public class MainActivityViewPagerAdapter extends FragmentStatePagerAdapter {
         super.destroyItem(container, position, object);
     }
 
-    // Returns the page title for the top indicator
     @Override
     public CharSequence getPageTitle(int position) {
         return "Page " + position;

@@ -23,6 +23,15 @@
             android:textColor="?attr/primaryText"
             android:fontFamily="@font/poppins"/>
 
+        <ImageView
+            android:id="@+id/settings_icon_view"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_settings"/>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_cororna_stats"
             android:layout_width="match_parent"

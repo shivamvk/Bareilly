@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         val conf: Configuration = resources.configuration
         conf.locale = Locale("hi")
         //resources.updateConfiguration(conf, dm)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         startActivity(Intent(
             this, MainActivity::class.java
         ))
