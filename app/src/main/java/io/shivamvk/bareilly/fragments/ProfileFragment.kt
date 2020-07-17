@@ -45,11 +45,9 @@ class ProfileFragment : Fragment() {
                 }
                 if (scrollRange + verticalOffset == 0) {
                     collapsingToolbarLayout.title = "Title"
-                    collapsingToolbarLayout.contentScrim = resources.getDrawable(R.color.colorPrimary)
-                    collapsingToolbarLayout.setScrimsShown(true,false)
                     isShow = true
-                } else if (isShow) {
-                    collapsingToolbarLayout.title = ""
+                } else {
+                    collapsingToolbarLayout.title = " "
                     isShow = false
                 }
             }
